@@ -7,8 +7,27 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class CirculoTest {
-    @Test public void testSomeLibraryMethod() {
-        Circulo classUnderTest = new Circulo();
-        assertTrue("someLibraryMethod should return 'true'", classUnderTest.someLibraryMethod());
+   
+	@Test public void calculaAreaComRaio2() {
+        Circulo classUnderTest = new Circulo(2.00);
+        double expected = 12.5664;
+        double actual = classUnderTest.getArea();
+        assertEquals(expected, actual,0.0001);
     }
+    
+    @Test public void calculaAreaComRaio100dot64() {
+        Circulo classUnderTest = new Circulo(100.64);
+        double expected = 31819.3103;
+        double actual = classUnderTest.getArea();
+        assertEquals(expected, actual,0.0001);
+    }
+    
+    @Test public void calculaAreaComRaio150() {
+        Circulo classUnderTest = new Circulo(150.00);
+        double expected = 70685.7750;
+        double actual = classUnderTest.getArea();
+        assertEquals(expected, actual,0.0001);
+    }
+    
+    
 }
